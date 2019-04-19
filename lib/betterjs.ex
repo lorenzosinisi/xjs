@@ -1,18 +1,11 @@
-defmodule Betterjs do
-  @moduledoc """
-  Documentation for Betterjs.
-  """
+defmodule Xjs do
+  def parse(str) do
+    case :xjs.string(to_charlist(str)) do
+      {:ok, tokens, _} ->
+        tokens
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Betterjs.hello()
-      :world
-
-  """
-  def hello do
-    :world
+      {:error, reason, _} ->
+        reason
+    end
   end
 end
